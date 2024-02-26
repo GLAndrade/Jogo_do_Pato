@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3nsnflwrw21r"]
+
+[ext_resource type="Script" path="res://belinha.gd" id="1_efe86"]
+[ext_resource type="Texture2D" uid="uid://btv65qi1nwbl4" path="res://Art Assets/Characters/Duck Girl/DuckGirl.png" id="1_ulvma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvk5"]
+size = Vector2(16, 18)
+
+[node name="Belinha" type="Area2D"]
+script = ExtResource("1_efe86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ayvk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ulvma")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
